@@ -1,5 +1,5 @@
 n = int(input())
-
+a = []
 for i in range(1,n):
     value=0
     value += i
@@ -7,4 +7,5 @@ for i in range(1,n):
     for j in str(k):
         value+=int(j)
     if value == n:
-        print(k)
+        a.append(k)
+print(min(a))
