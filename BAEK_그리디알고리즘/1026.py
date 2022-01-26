@@ -1,0 +1,7 @@
+n = input()
+a = list(map(int,input().split()))
+a.sort()
+b = list(map(int,input().split()))
+b.sort(reverse=True)
+c = sum(list(map(lambda x,y:int(x)*int(y),a,b)))
+print(c)

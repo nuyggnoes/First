@@ -13,7 +13,7 @@ def answer(a,b,kg):
     if rest % a == 0:
         return count + 1
     
-    for _ in range(5000):
+    for i in range(5000):
         count -= 1
   
         if (rest + b) % a == 0:
