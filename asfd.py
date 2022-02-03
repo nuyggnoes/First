@@ -1,3 +1,3 @@
-import sys
-a=sys.stdin.readline()
-print(a)
+a=2
+b=4
+print(a,b)

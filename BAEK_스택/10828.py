@@ -1,21 +1,21 @@
-n = int(input())
+import sys
+n = int(sys.stdin.readline())
 stack = []
-count = 0
+
 for i in range(n):
-    q = input().split()
+    q = sys.stdin.readline().strip()
 
     if q[0] == 'push':
         stack.append(q[1])
-        count += 1
+
 
     elif q[0] == 'pop':
         if not stack : print('-1')
         else :
             print(stack.pop())
-            count -= 1
 
     elif q[0] == 'size':
-        print(count)
+        print(len(stack))
 
     elif q[0] == 'empty':
         if not stack: print('1')
