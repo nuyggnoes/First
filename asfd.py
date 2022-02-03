@@ -1,3 +1,3 @@
-a=2
-b=4
-print(a,b)
+import sys
+a = sys.stdin.readline().split()
+print(list(a))
