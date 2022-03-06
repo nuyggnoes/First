@@ -1,5 +1,5 @@
-a = 4
-print(type(a))
-n = [-1]*a
-print(n)
-print(*n)
+from collections import deque
+p = ['1','2','3','4']
+p = deque(p)
+p.popleft()
+print(list(p))
