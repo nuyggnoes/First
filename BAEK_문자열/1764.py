@@ -1,6 +1,6 @@
 import sys
 
-n,m = map(int,sys.stdin.readline().rstrip().split())
+n,m = map(int,sys.stdin.readline().split())
 list_n = []
 list_m = []
 
