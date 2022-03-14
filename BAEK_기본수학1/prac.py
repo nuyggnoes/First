@@ -1,8 +1,12 @@
-import sys
-N, M = map(int, sys.stdin.readline().split())
-dic = {}
-for i in range(1, N+1):
-    name = sys.stdin.readline().rstrip()
-    dic[name] = str(i)
-    dic[str(i)] = name
-print(dic)
+from collections import Counter
+
+def find_max(word):
+    counter = Counter(word)
+    max_count = -1
+    for letter in counter:
+        if counter[letter] > max_count:
+            max_count = counter[letter]
+            max_letter = letter
+    return max_letter, max_count
+
+print(find_max('helloword'))
