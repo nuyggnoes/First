@@ -1,0 +1,8 @@
+import sys
+lst = []
+s = sys.stdin.readline().rstrip()
+for i in range(len(s)):
+    lst.append(s[i:])
+lst.sort()
+for i in lst:
+    print(i)
