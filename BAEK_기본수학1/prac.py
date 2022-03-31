@@ -1,2 +1,4 @@
-a = ['5','2','4']
-print(sorted(a))
+c = 'BlockDMask' 
+d = 'BAAAlockDMask' 
+print(min(c, d))
+
