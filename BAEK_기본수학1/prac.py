@@ -1,4 +1,3 @@
-c = 'BlockDMask' 
-d = 'BAAAlockDMask' 
-print(min(c, d))
-
+queue = [(0,0)]
+queue.append((1,0))
+print(queue)
