@@ -29,6 +29,6 @@ for i in tomato_box:
     for j in i:
         if j == 0:
             print(-1)
-            break
+            exit(0)
     day = max(day, max(i))
 print(day - 1)
