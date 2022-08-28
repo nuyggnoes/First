@@ -16,7 +16,7 @@ for _ in range(k):                                 #방향 변경 정보 저장
 
 snake = deque([(0,0)])
 
-dx,dy = [-1,0,1,0],[0,1,0,-1]
+dx,dy = [-1,0,1,0],[0,1,0,-1]    #북 -> 동 -> 남 -> 서
 
 d = 1
 t = 0
@@ -45,13 +45,13 @@ while True:
         if (nx,ny) in snake:      #몸과 충돌
             break
 
-        if ground[nx][ny] == 1:
-            ground[nx][ny] = 0
-            snake.append((nx,ny))
+        if ground[nx][ny] == 1:    #사과를 먹었을 때
+            ground[nx][ny] = 0     #사과를 지우고
+            snake.append((nx,ny))  #뱀의 길이가 늘어난다
         
-        elif ground[nx][ny] == 0:
-            snake.append((nx,ny))
-            snake.popleft()
+        elif ground[nx][ny] == 0:   #사과를 먹지 않았을 때
+            snake.append((nx,ny))   
+            snake.popleft()         #뱀의 길이는 그대로
     else:
         break
 

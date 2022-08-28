@@ -25,5 +25,3 @@ while True:
             nx += 1
             move.append(nx,ny)
     cnt += 1
-    break
-print(nx,ny)

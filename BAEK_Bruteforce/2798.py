@@ -7,7 +7,7 @@ ans = -1
 for i in range(n):
     for j in range(i+1,n):
         for k in range(j+1,n):
-            j = card[i] + card[j] + card[k]
+            s = card[i] + card[s] + card[k]
             if s > m:
                 continue
             elif s < ans:

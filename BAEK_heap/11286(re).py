@@ -9,4 +9,3 @@ for _ in range(n):
     else:
         if not heap : print(0)
         else: print(heapq.heappop(heap)[1])
-    print(heap)

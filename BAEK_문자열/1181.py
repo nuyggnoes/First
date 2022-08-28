@@ -1,12 +1,13 @@
 import sys
 n = int(sys.stdin.readline())
-arr = []
+arr = set()
 for i in range(n):
-    arr.append(sys.stdin.readline().rstrip())
-b = set(arr)
-b = list(b)
-b.sort()
-b.sort(key=len)
+    arr.add(sys.stdin.readline().rstrip())
+print(arr)
+arr = list(arr)
+arr.sort()
+print(arr)
+arr.sort(key=len)
 
-for i in b:
+for i in arr:
     print(i)

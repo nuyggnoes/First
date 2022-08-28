@@ -1,6 +1,3 @@
-from re import T
-
-
 def DFS(graph,root):
     visited = []
     stack = [root]

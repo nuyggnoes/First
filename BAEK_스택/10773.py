@@ -1,14 +1,10 @@
 import sys
 k = int(sys.stdin.readline())
 stack = []
-result = 0
 
 for i in range(k):
     n = int(sys.stdin.readline())
     if n == 0: stack.pop()
     else: stack.append(n)
 
-for i in stack:
-    result += i
-    
-print(result)
+print(sum(stack))
