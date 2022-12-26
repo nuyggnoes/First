@@ -1,7 +1,3 @@
-from re import A
-import sys
-input = sys.stdin.readline
-
 n = int(input())
 a = input()
 

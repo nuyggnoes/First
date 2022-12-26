@@ -1,8 +1,8 @@
 def solution(record):
 
     answer = []
-    dic = { id.split()[1] : id.split()[2] for id in record if id.split()[0] != "Leave"}
     
+    dic = { id.split()[1] : id.split()[2] for id in record if id.split()[0] != "Leave"}
     for id in record:
         if id.split()[0] == 'Enter':
             answer.append(dic[id.split()[1]] + "님이 들어왔습니다.")

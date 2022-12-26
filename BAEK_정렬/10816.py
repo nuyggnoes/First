@@ -15,8 +15,7 @@ for i in N:
 
 for i in M:
     result = count.get(i)
-    # if result == None:
-    #     print(0,end = ' ')
-    # else:
-    #     print(result, end = ' ')
-    print(result,end=' ')
+    if result == None:
+        print(0,end = ' ')
+    else:
+        print(result, end = ' ')

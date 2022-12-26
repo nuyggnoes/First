@@ -9,7 +9,7 @@ for _ in range(n):
     else:
         li[book] += 1
 book = max(li.values())
-print(book)
+
 for key,value in li.items():
     if book == value:
         rank.append(key)
