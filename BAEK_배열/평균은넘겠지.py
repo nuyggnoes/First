@@ -1,15 +1,18 @@
-C=int(input())
-while True:
-    count = 0
-    n=list(map(int,input().split()))
-    for i in n:
-        sum = 0
-        sum += i
-        avg = sum/(len(n)-1)
-    for i in n:
-        if i > avg:
-            count += 1
-    result = (count/(len(n)-1)) * 100
-    print(result)
-    C -= 1
-    if C == 0:break
+import sys
+input = sys.stdin.readline
+T = int(input())
+while T>0:
+    l = list(map(int,input().split()))
+    sum = 0
+    av = 0
+    cnt = 0
+    for i in range(1,len(l)):
+        sum += l[i]
+        av = sum/(len(l)-1)
+    for i in range(1,len(l)):
+        if l[i] > av:
+            cnt += 1
+    result = cnt/(len(l)-1)*100
+    print(format(result, ".3f"),end="%")
+    print("")
+    T-=1
