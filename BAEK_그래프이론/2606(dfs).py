@@ -1,5 +1,4 @@
 import sys
-
 graph = {}
 n = int(sys.stdin.readline())
 for _ in range(int(sys.stdin.readline())):
@@ -12,7 +11,6 @@ for _ in range(int(sys.stdin.readline())):
         graph[b] = [a]
     else:
         graph[b].append(a)
-
 def DFS(graph):
     visited = []
     stack = [1]
