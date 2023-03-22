@@ -8,22 +8,23 @@ for _ in range(m):
     graph[a].append(b)
     graph[b].append(a)
 
-# def dfs(v):
+def dfs(v):
+    visited[v] = 1
+    if(sum(visited) == n):return
+    for i in graph[v]:
+        if visited[i] == 0:
+            dfs(i)
+
+# def bfs(v):
 #     visited[v] = 1
 #     for i in graph[v]:
 #         if visited[i] == 0:
-#             dfs(i)
-
-def bfs(v):
-    visited[v] = 1
-    for i in graph[v]:
-        if visited[i] == 0:
-            visited[i] = 1
+#             visited[i] = 1
 
 
 for i in range(1,n+1):
     if visited[i] == 0:
         cnt += 1
-        bfs(i)
+        dfs(i)
 
 print(cnt)
