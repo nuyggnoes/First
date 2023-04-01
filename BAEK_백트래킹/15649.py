@@ -1,14 +1,12 @@
 N,M = map(int,input().split())
-S = []
-
+s = []
 def dfs():
-    if len(S) == M:
-        print(' '.join(map(str,S)))
+    if len(s) == M:
+        print(' '.join(map(str,s)))
         return
-    for i in range(1, N+1):
-        if i not in S:
-            S.append(i)
+    for i in range(1,N+1):
+        if i not in s:
+            s.append(i)
             dfs()
-            S.pop()
-
+            s.pop()
 dfs()
