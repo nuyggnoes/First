@@ -7,20 +7,36 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 browser = webdriver.Chrome(options=options)
 
+# def get_page_count(keyword):
+#     base_url = "https://kr.indeed.com/jobs?q="
+#     browser.get(f"{base_url}{keyword}")
+#     soup = BeautifulSoup(browser.page_source, "html.parser")
+#     pagination = soup.find("nav", class_= "ecydgvn0")
+#     if pagination == None:
+#         return 1
+#     pages = pagination.find_all("div",recursive=False)
+#     count = (len(pages))
+#     if count >= 5:
+#         return 5
+#     else:
+#         return count
+
 def get_page_count(keyword):
-    base_url = "https://kr.indeed.com/jobs?q="
-    browser.get(f"{base_url}{keyword}")
-    soup = BeautifulSoup(browser.page_source, "html.parser")
-    pagination = soup.find("nav", class_= "ecydgvn0")
+    base_url = "https://www.indeed.com/jobs?q="
+    end_url = "&limit=50"
+    browser.get(f"{base_url}{keyword}{end_url}")
+
+    response = browser.page_source
+    soup = BeautifulSoup(response, "html.parser")
+    pagination = soup.find("nav", class_="ecydgvn0")
     if pagination == None:
         return 1
-    pages = pagination.find_all("div",recursive=False)
-    count = (len(pages))
-    if count >= 5:
+    pages = pagination.find_all("div", recursive=False)
+    count =len(pages)
+    if count >=5:
         return 5
     else:
         return count
-
 
 def extract_indeed_jobs(keyword):
     pages = get_page_count(keyword)
@@ -46,9 +62,9 @@ def extract_indeed_jobs(keyword):
                 location = job.find("div", class_= "companyLocation")
                 job_data = {
                     'link' : f"https://kr.indeed.com{link}",
-                    'company' : company.string,
-                    'location' : location.string,
-                    'position' : title
+                    'company' : company.string.replace(',', ' '),
+                    'location' : location.string.replace(',', ' '),
+                    'position' : title.replace(',', ' ')
                 }
                 results.append(job_data)
     return results
