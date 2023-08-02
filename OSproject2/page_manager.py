@@ -135,10 +135,3 @@ class PageManager(object):
     #                 print("page fault")
     #                 self.page_frame_info[i] =0
     #     return replaced_frame_number
-    
-    # for i in range(100):
-    #     print('*')
-    #     for j in range(100):
-    #         print('*')
-    #     print('\n')
-    
