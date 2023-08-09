@@ -13,7 +13,7 @@ class Player(Human):
 class Fan(Human):
     def __init__(self,name,fav_team):
         super().__init__(name)
-        self.fav_team=fav_team
+        self.fav_team =fav_team
 
 steve_player = Player("steve", 1000)
 steve_fan = Fan("steve_fan", "dontknow")
